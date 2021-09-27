@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Route, RouterModule, Routes } from '@angular/router';
 
 import { FormComponent } from './components/form/form.component';
 import { HomeComponent } from './components/home/home.component';
@@ -9,7 +9,7 @@ import { FormValidationComponent } from './form-validation/form-validation.compo
 import { FormWizardComponent } from './form-wizard/form-wizard.component';
 
 
-const routes: Routes = [
+const routes: Route[] = [
   
   {path:'',redirectTo:'/dashboard',pathMatch:'full'},
   { path: 'formLayout', component: FormLayoutComponent},

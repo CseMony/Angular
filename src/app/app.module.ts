@@ -9,9 +9,26 @@ import { FormLayoutComponent } from './form-layout/form-layout.component';
 import { FormElementsComponent } from './form-elements/form-elements.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
 import { FormWizardComponent } from './form-wizard/form-wizard.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LayoutModule } from "@progress/kendo-angular-layout";
+import { Route, RouterModule, Routes } from '@angular/router';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IconsModule } from '@progress/kendo-angular-icons';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+
+import { TabComponent } from './tabs/tab/tab.component';
+import { DynamicTabsDirective } from './tabs/dynamic-tabs.directive';
 
 
-import { RouterModule, ROUTES } from '@angular/router';
+const ROUTES: Route[] = [
+  {path:'',redirectTo:'/dashboard',pathMatch:'full'},
+  { path: 'formLayout', component: FormLayoutComponent},
+  { path: 'formElements', component: FormElementsComponent},
+  { path: 'formValidation', component: FormValidationComponent},
+  { path: 'formwizards', component: FormWizardComponent}
+];
+
 
 
 @NgModule({
@@ -23,6 +40,9 @@ import { RouterModule, ROUTES } from '@angular/router';
     FormElementsComponent,
     FormValidationComponent,
     FormWizardComponent,
+   
+    TabComponent,
+    DynamicTabsDirective,
     //MenuListItemComponent,
    
   ],
@@ -30,10 +50,17 @@ import { RouterModule, ROUTES } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    NgbModule,
+    InputsModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    IconsModule,
+    ButtonsModule,
+    RouterModule.forRoot(ROUTES)
     
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

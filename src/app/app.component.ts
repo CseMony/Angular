@@ -1,8 +1,9 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, VERSION, ViewChild } from '@angular/core';
+import { NavigationEnd } from '@angular/router';
 import { MultilevelMenuService, ExpandCollapseStatusEnum, MultilevelNodes, Configuration } from 'ng-material-multilevel-menu';
 import {SlideInOut, ExpandedRTL, ExpandedLTR } from 'ng-material-multilevel-menu';
 import { NavItem } from './nav-item';
-
+import { TabService } from './tab.service';
 
 //import studentsData from './Data.json';
 
@@ -13,6 +14,7 @@ import { NavItem } from './nav-item';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
  
+  
   animations: [
     SlideInOut,
     ExpandedLTR,
@@ -20,7 +22,23 @@ import { NavItem } from './nav-item';
   ]
 })
 export class AppComponent {
+  [x: string]: any;
   title = 'Demo';
+  tabs: ITab[] = [];
+  constructor(private tabService: TabService) {}
+ 
+  ngOnInit() {
+    this.tabs = this.tabService.tabs;
+ 
+    this.router.events.subscribe((event: { urlAfterRedirects: any; }) => {
+      if (event instanceof NavigationEnd) {
+        this.activeTabUrl = event.urlAfterRedirects;
+        if (this.tabs.length === 0) {
+          this.tabService.addTab(this.activeTabUrl);
+        }
+      }
+    });
+  }
   navItems: NavItem[] = [
     {  
       "Parentid": 0,
@@ -105,8 +123,15 @@ export class AppComponent {
       
   ];
 
-  constructor(){
-
-  }
+  menuOptions = [];
   
+  onTabChange(event: { nextId: any; }) {
+    this.router.navigateByUrl(event.nextId);
+  }
+ 
+  
+}
+export interface ITab {
+  name: string;
+  url: string;
 }
