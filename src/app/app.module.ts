@@ -16,9 +16,8 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsModule } from '@progress/kendo-angular-icons';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { TestServiceService } from './test-service.service';
 
-import { TabComponent } from './tabs/tab/tab.component';
-import { DynamicTabsDirective } from './tabs/dynamic-tabs.directive';
 
 
 const ROUTES: Route[] = [
@@ -38,12 +37,9 @@ const ROUTES: Route[] = [
     FormComponent,
     FormLayoutComponent,
     FormElementsComponent,
-    FormValidationComponent,
-    FormWizardComponent,
-   
-    TabComponent,
-    DynamicTabsDirective,
-    //MenuListItemComponent,
+    FormValidationComponent
+
+  
    
   ],
  
@@ -57,9 +53,9 @@ const ROUTES: Route[] = [
     IconsModule,
     ButtonsModule,
     RouterModule.forRoot(ROUTES)
-    
   ],
-  providers: [],
+  providers: [TestServiceService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

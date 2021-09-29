@@ -43,8 +43,8 @@
               "src/assets/lib/font-awesome/css/font-awesome.css",
               "src/assets/lib/Ionicons/css/ionicons.css",
               "src/assets/lib/perfect-scrollbar/css/perfect-scrollbar.css",
-              "src/assets/lib/rickshaw/rickshaw.min.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/assets/lib/rickshaw/rickshaw.min.css"
+             
             ],
             "scripts": [
               "src/assets/lib/jquery/jquery.js",

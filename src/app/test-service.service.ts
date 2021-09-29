@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ITab } from './app.component';
+import { NavItem } from './nav-item';
+import { ITab } from './tab';
+//import { ITab } from './app.component';
 
 @Injectable({
   providedIn: 'root',
