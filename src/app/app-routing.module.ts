@@ -11,7 +11,7 @@ import { FormWizardComponent } from './form-wizard/form-wizard.component';
 
 const routes: Route[] = [
   
-  {path:'',redirectTo:'/dashboard',pathMatch:'full'},
+  {path:'',redirectTo:'/index.html',pathMatch:'full'},
   { path: 'formLayout', component: FormLayoutComponent},
   { path: 'formElements', component: FormElementsComponent},
   { path: 'formValidation', component: FormValidationComponent},

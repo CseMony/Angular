@@ -31,18 +31,15 @@
         <li class="nav-item"  style="margin-left: 30px" ><a href="" class="nav-link with-sub"> <span>{{child.name}}</span>
         </a>
           <ul class="nav-sub" >
-            <li class="nav-item" ><a routerLink="{{children.route}}"  class="nav-link" *ngFor="let children of child.children"  >{{children.name}}</a></li>
+            <li class="nav-item" ><a [routerLink]="children.route"  routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"  class="nav-link" *ngFor="let children of child.children"  >{{children.name}}</a></li>
            
           </ul>
         </li>
       
       </ul>
     </li><!-- nav-item -->
-    
-
   
-    
-
   </ul>
 </div>
 
@@ -131,12 +128,20 @@
     </div><!-- dropdown -->
   </div><!-- kt-headpanel-right -->
 </div><!-- kt-headpanel -->
+   
+ 
 
+  <div class="kt-breadcrumb">
+    <nav class="breadcrumb">
+      
+      <span class="breadcrumb-item active">Form Elements</span>
+    </nav>
+  </div><!-- kt-breadcrumb -->
 
+<div class="kt-footer">
+  <span>Copyright &copy;. All Rights Reserved. Katniss Responsive Bootstrap 4 Admin Dashboard.</span>
+  <span>Created by: ThemePixels, Inc.</span>
+</div><!-- kt-footer -->
 
   <router-outlet></router-outlet>
-
-  <div class="kt-footer">
-    <span>Copyright &copy;. All Rights Reserved. Katniss Responsive Bootstrap 4 Admin Dashboard.</span>
-    <span>Created by: ThemePixels, Inc.</span>
-  </div><!-- kt-footer -->
+ 
