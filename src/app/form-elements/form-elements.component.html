@@ -1,13 +1,8 @@
    
    <!-- ##### MAIN PANEL ##### -->
    <div class="kt-mainpanel">
-    <kendo-tabstrip #tabstrip (tabClose)="onClose($event)" [closable]="true">
-      <kendo-tabstrip-tab
-        *ngIf="!closedTabs['Form Elements']"
-        title="Form Elements"
-        [selected]="selected"
-      >
-        <ng-template kendoTabContent>
+ 
+        
           <div class="kt-pagebody">
             <div class="card pd-20 pd-sm-40">
               <h6 class="card-body-title">Basic Form Input</h6>
@@ -429,18 +424,6 @@
       ]
       &#125;);</code></pre>
             </div><!-- kt-pagebody -->
-        </ng-template>
-      </kendo-tabstrip-tab>
-    
-      
-     
-    </kendo-tabstrip>
+       
     
   </div><!-- kt-mainpanel -->
-
-  <div class="kt-breadcrumb">
-    <nav class="breadcrumb">
-      
-      <span class="breadcrumb-item active">Form Elements</span>
-    </nav>
-  </div><!-- kt-breadcrumb -->

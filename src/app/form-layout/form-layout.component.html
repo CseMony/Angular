@@ -1,12 +1,6 @@
  <!-- ##### MAIN PANEL ##### -->
  <div class="kt-mainpanel">
-  <kendo-tabstrip #tabstrip (tabClose)="onClose($event)" [closable]="true">
-    <kendo-tabstrip-tab
-      *ngIf="!closedTabs['Form layout']"
-      title="Form Layout"
-      [selected]="selected"
-    >
-      <ng-template kendoTabContent>
+
            
 
     <div class="kt-pagebody">
@@ -158,17 +152,7 @@
         </div><!-- d-flex -->
       </div><!-- card -->
     </div>
-      </ng-template>
-    </kendo-tabstrip-tab>
-  
     
-   
-  </kendo-tabstrip>
 
   </div><!-- kt-mainpanel -->
-  <div class="kt-breadcrumb">
-    <nav class="breadcrumb">
-      
-      <span class="breadcrumb-item active">Form Layout</span>
-    </nav>
-  </div><!-- kt-breadcrumb -->
+ 

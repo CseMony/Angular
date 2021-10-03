@@ -17,11 +17,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsModule } from '@progress/kendo-angular-icons';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { TestServiceService } from './test-service.service';
+import { AccordionComponent } from './UI/accordion/accordion.component';
 
 
 
 const ROUTES: Route[] = [
-  {path:'',redirectTo:'/dashboard',pathMatch:'full'},
+  {path:'',component:HomeComponent},
   { path: 'formLayout', component: FormLayoutComponent},
   { path: 'formElements', component: FormElementsComponent},
   { path: 'formValidation', component: FormValidationComponent},
@@ -37,7 +38,8 @@ const ROUTES: Route[] = [
     FormComponent,
     FormLayoutComponent,
     FormElementsComponent,
-    FormValidationComponent
+    FormValidationComponent,
+    AccordionComponent
 
   
    
@@ -52,7 +54,7 @@ const ROUTES: Route[] = [
     LayoutModule,
     IconsModule,
     ButtonsModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES, { relativeLinkResolution: 'legacy' })
   ],
   providers: [TestServiceService],
 

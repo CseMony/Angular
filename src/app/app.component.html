@@ -1,3 +1,4 @@
+
 <!-- ##### SIDEBAR LOGO ##### -->
 <div class="kt-sideleft-header">
   <div class="kt-logo"><a href="index.html">katniss</a></div>
@@ -9,41 +10,9 @@
     </span>
   </div><!-- input-group -->
 </div><!-- kt-sideleft-header -->
+<div class="d-flex container-fluid flex-row" style="margin-top:2.4%;">
 
-<div class="kt-sideleft">
-  <label class="kt-sidebar-label">Navigation</label>
-  <ul class="nav kt-sideleft-menu">
-    <li class="nav-item">
-      <a href="index.html" class="nav-link active">
-        <i class="icon ion-ios-home-outline"></i>
-        <span>Dashboard</span>
-      </a>
-    </li><!-- nav-item -->
-    
-    <li class="nav-item" *ngFor="let item of navItems" >
-      <a href="" class="nav-link with-sub">
-        <i class="icon ion-ios-gear-outline"></i>
-        <span>{{item.name}}</span>
-      </a>
-
-
-      <ul class="nav kt-sideleft-menu" *ngFor="let child of item.children">
-        <li class="nav-item"  style="margin-left: 30px" ><a href="" class="nav-link with-sub"> <span>{{child.name}}</span>
-        </a>
-          <ul class="nav-sub" >
-            <li class="nav-item" ><a [routerLink]="children.route"  routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"  class="nav-link" *ngFor="let children of child.children"  >{{children.name}}</a></li>
-           
-          </ul>
-        </li>
-      
-      </ul>
-    </li><!-- nav-item -->
   
-  </ul>
-</div>
-
-
 <!-- ##### HEAD PANEL ##### -->
 <div class="kt-headpanel">
   <div class="kt-headpanel-left">
@@ -128,20 +97,99 @@
     </div><!-- dropdown -->
   </div><!-- kt-headpanel-right -->
 </div><!-- kt-headpanel -->
-   
- 
 
-  <div class="kt-breadcrumb">
-    <nav class="breadcrumb">
+ 
+  <div class="navigation" style="margin-left: 250px; " >
+
+    <div class="kt-sideleft"> 
+      <label class="kt-sidebar-label">Navigation</label>
+      <ul class="nav kt-sideleft-menu">
+        <li class="nav-item">
+          <a routerLink="" class="nav-link active">
+            <i class="icon ion-ios-home-outline"></i>
+            <span>Dashboard</span>
+          </a>
+        </li><!-- nav-item -->
+        
+        <li class="nav-item" *ngFor="let item of navItems" >
+          <a [routerLink] ="item.route" class="nav-link with-sub">
+            <i class="icon ion-ios-gear-outline"></i>
+            <span>{{item.name}}</span>
+          </a>
+    
+         
+          <ul class="nav kt-sideleft-menu" *ngFor="let child of item.children">
+            <li class="nav-item"  style="margin-left: 30px" ><a [routerLink] ="child.route" class="nav-link with-sub"> <span>{{child.name}}</span>
+            </a>
+              <ul class="nav-sub" >
+                <li class="nav-item" ><a [routerLink]="children.route"  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"  class="nav-link" *ngFor="let children of child.children"  >{{children.name}}</a></li>
+               
+              </ul>
+            </li>
+          
+          </ul>
+        </li><!-- nav-item -->
       
-      <span class="breadcrumb-item active">Form Elements</span>
-    </nav>
-  </div><!-- kt-breadcrumb -->
+      </ul>
+    </div>
+   
+  </div>
 
-<div class="kt-footer">
-  <span>Copyright &copy;. All Rights Reserved. Katniss Responsive Bootstrap 4 Admin Dashboard.</span>
-  <span>Created by: ThemePixels, Inc.</span>
-</div><!-- kt-footer -->
+  <div>
 
-  <router-outlet></router-outlet>
+  
+    <!-- All tabs -->
+    <ul class="nav nav-tabs bg-light mt-3">
+      <li
+        class="nav-item"
+        *ngFor="let tab of tabs; "
+        (mouseleave)="mouseOverTab(tab)"
+        (mouseenter)="mouseOverTab(tab)"
+      >
+        <div class="nav-link" [class.active]="tab.active">
+          <div class="d-flex flex-row cursor-pointer">
+            <span
+              class="badge badge-danger my-auto mr-2"
+              *ngIf="(tab.count | async) !> 0"
+              >{{ tab.count | async }}</span
+            >
+            <div class="flex-fill" [routerLink]="tab.route.path">
+              {{ tab.name }}
+            </div>
+            <div
+              class="transition-all-ease-250ms"
+              [style.width]="currentHoverTabKey == tab.key ? 'auto' : '0px'"
+              [class.pl-3]="currentHoverTabKey == tab.key"
+              [class.opacity-0]="currentHoverTabKey != tab.key"
+              [class.invisible]="currentHoverTabKey != tab.key"
+              *ngIf="tabs.length > 1"
+              (click)="disposeTab(tab)"
+            >
+              X
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Content of one tab (and all other non visible) -->
+    <div class="tab-content p-3 border-left border-right flex-fill">
+      <ng-container *ngFor="let tab of tabs">
+        <div
+          class="tab-pane fade {{ tab.name }}"
+          [class.show]="tab.active"
+          [class.active]="tab.active"
+          [id]="tab.name"
+          role="tabpanel"
+        >
+          <!--  -->
+          <ng-container
+            *ngComponentOutlet="tab.component"
+          ></ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </div>
  
+</div>
