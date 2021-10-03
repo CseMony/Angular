@@ -8,7 +8,7 @@ import { TestServiceService } from '../test-service.service';
   selector: 'app-form-elements',
   templateUrl: './form-elements.component.html',
   styleUrls: ['./form-elements.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  
 })
 export class FormElementsComponent implements OnInit {
 
@@ -36,6 +36,10 @@ export class FormElementsComponent implements OnInit {
 
   public restoreTabs(): void {
     this.closedTabs = [];
+  }
+
+  ngOnDestroy() {
+    console.log('Tab destroyed');
   }
 
 }
