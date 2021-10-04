@@ -1,6 +1,13 @@
+<<<<<<< HEAD
  <!-- ##### MAIN PANEL ##### -->
  <div class="kt-mainpanel">
 
+=======
+   <!-- ##### MAIN PANEL ##### -->
+   <div class="kt-mainpanel">
+  
+    <div class="kt-pagebody">
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
 
   <div class="kt-pagebody">
 
@@ -32,9 +39,88 @@
 height: 150
 &#125;)</code></pre>
 
+<<<<<<< HEAD
   </div><!-- kt-pagebody -->
   <div class="kt-footer">
     <span>Copyright &copy;. All Rights Reserved. Katniss Responsive Bootstrap 4 Admin Dashboard.</span>
     <span>Created by: ThemePixels, Inc.</span>
   </div><!-- kt-footer -->
 </div><!-- kt-mainpanel -->
+=======
+      <p class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">Source Code</p>
+      <pre><code class="html pd-20">&lt;form method=&quot;post&quot; action=&quot;form-validation.html&quot; data-parsley-validate&gt;
+&lt;p class=&quot;mg-b-10&quot;&gt;What is your favorite browser? &lt;span class=&quot;tx-danger&quot;&gt;*&lt;/span&gt;&lt;/p&gt;
+&lt;div id=&quot;cbWrapper&quot; class=&quot;parsley-checkbox mg-b-0&quot;&gt;
+&lt;label class=&quot;ckbox&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;browser[]&quot; value=&quot;1&quot; data-parsley-mincheck=&quot;2&quot;
+  data-parsley-class-handler=&quot;#cbWrapper&quot;
+  data-parsley-errors-container=&quot;#cbErrorContainer&quot; required&gt;&lt;span&gt;Firefox&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;ckbox&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;browser[]&quot; value=&quot;2&quot;&gt;&lt;span&gt;Chrome&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;ckbox&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;browser[]&quot; value=&quot;3&quot;&gt;&lt;span&gt;Safari&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;ckbox&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;browser[]&quot; value=&quot;4&quot;&gt;&lt;span&gt;Edge&lt;/span&gt;
+&lt;/label&gt;
+&lt;/div&gt;&lt;!-- parsley-checkbox --&gt;
+&lt;div id=&quot;cbErrorContainer&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;mg-t-20&quot;&gt;
+&lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; value=&quot;5&quot;&gt;Validate Form&lt;/button&gt;
+&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+
+      <div class="card pd-20 pd-sm-40 mg-t-50">
+        <h6 class="card-body-title">Select Box Validation</h6>
+        <p class="mg-b-20 mg-sm-b-30">A demo of select boxes that must be selected at least one fom any given option.</p>
+
+        <form action="form-validation.html" id="selectForm">
+          <div class="d-md-flex">
+            <div id="slWrapper" class="parsley-select wd-200 wd-xs-250">
+              <select class="form-control select2" data-placeholder="Choose one" data-parsley-class-handler="#slWrapper" data-parsley-errors-container="#slErrorContainer" required>
+                <option label="Choose one"></option>
+                <option value="Firefox">Firefox</option>
+                <option value="Chrome">Chrome</option>
+                <option value="Safari">Safari</option>
+                <option value="Opera">Opera</option>
+                <option value="Internet Explorer">Internet Explorer</option>
+              </select>
+              <div id="slErrorContainer"></div>
+            </div>
+            <div class="mg-md-l-10 mg-t-10 mg-md-t-0">
+              <button type="submit" class="btn btn-default pd-x-15" value="5">Validate Form</button>
+            </div>
+          </div><!-- d-flex -->
+        </form>
+      </div><!-- card -->
+
+      <p class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">Source Code</p>
+      <pre class="mg-b-0"><code class="html pd-20">&lt;form action=&quot;form-validation.html&quot; id=&quot;selectForm&quot;&gt;
+&lt;div class=&quot;d-flex&quot;&gt;
+&lt;div id=&quot;slWrapper&quot; class=&quot;parsley-select wd-250&quot;&gt;
+  &lt;select class=&quot;form-control select2&quot; data-placeholder=&quot;Choose one&quot;
+  data-parsley-class-handler=&quot;#slWrapper&quot;
+  data-parsley-errors-container=&quot;#slErrorContainer&quot; required&gt;
+    &lt;option label=&quot;Choose one&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;Firefox&quot;&gt;Firefox&lt;/option&gt;
+    &lt;option value=&quot;Chrome&quot;&gt;Chrome&lt;/option&gt;
+    &lt;option value=&quot;Safari&quot;&gt;Safari&lt;/option&gt;
+    &lt;option value=&quot;Opera&quot;&gt;Opera&lt;/option&gt;
+    &lt;option value=&quot;Internet Explorer&quot;&gt;Internet Explorer&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;div id=&quot;slErrorContainer&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;mg-l-10&quot;&gt;&lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; value=&quot;5&quot;&gt;Validate Form&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;!-- d-flex --&gt;
+&lt;/form&gt;</code></pre>
+
+    </div><!-- kt-pagebody -->
+    <div class="kt-footer">
+      <span>Copyright &copy;. All Rights Reserved. Katniss Responsive Bootstrap 4 Admin Dashboard.</span>
+      <span>Created by: ThemePixels, Inc.</span>
+    </div><!-- kt-footer -->
+  </div><!-- kt-mainpanel -->
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f

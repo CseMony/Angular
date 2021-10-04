@@ -10,7 +10,11 @@
     </span>
   </div><!-- input-group -->
 </div><!-- kt-sideleft-header -->
+<<<<<<< HEAD
 <div class="d-flex container-fluid flex-row" >
+=======
+<div class="d-flex container-fluid flex-row" style="margin-top:2.4%;">
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
 
   
 <!-- ##### HEAD PANEL ##### -->
@@ -97,6 +101,7 @@
     </div><!-- dropdown -->
   </div><!-- kt-headpanel-right -->
 </div><!-- kt-headpanel -->
+<<<<<<< HEAD
 <div class="kt-breadcrumb">
   <nav class="breadcrumb">
   
@@ -139,6 +144,11 @@
 </div><!-- kt-breadcrumb -->
  
   <div class="navigation" style="margin-left: 250px;  " >
+=======
+
+ 
+  <div class="navigation" style="margin-left: 250px; " >
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
 
     <div class="kt-sideleft"> 
       <label class="kt-sidebar-label">Navigation</label>
@@ -152,13 +162,21 @@
         
         <li class="nav-item" *ngFor="let item of navItems" >
           <a [routerLink] ="item.route" class="nav-link with-sub">
+<<<<<<< HEAD
             <i class="{{item.icon}}"></i>
+=======
+            <i class="icon ion-ios-gear-outline"></i>
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
             <span>{{item.name}}</span>
           </a>
     
          
           <ul class="nav kt-sideleft-menu" *ngFor="let child of item.children">
+<<<<<<< HEAD
             <li class="nav-item"  style="margin-left:30px" ><a [routerLink] ="child.route" class="nav-link with-sub"> <span>{{child.name}}</span>
+=======
+            <li class="nav-item"  style="margin-left: 30px" ><a [routerLink] ="child.route" class="nav-link with-sub"> <span>{{child.name}}</span>
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
             </a>
               <ul class="nav-sub" >
                 <li class="nav-item" ><a [routerLink]="children.route"  routerLinkActive="active"
@@ -179,10 +197,48 @@
 
   
     <!-- All tabs -->
+<<<<<<< HEAD
     
 
     <!-- Content of one tab (and all other non visible) -->
     <div class="tab-content " style="margin-top: 0%; padding-left: 0%;">
+=======
+    <ul class="nav nav-tabs bg-light mt-3">
+      <li
+        class="nav-item"
+        *ngFor="let tab of tabs; "
+        (mouseleave)="mouseOverTab(tab)"
+        (mouseenter)="mouseOverTab(tab)"
+      >
+        <div class="nav-link" [class.active]="tab.active">
+          <div class="d-flex flex-row cursor-pointer">
+            <span
+              class="badge badge-danger my-auto mr-2"
+              *ngIf="(tab.count | async) !> 0"
+              >{{ tab.count | async }}</span
+            >
+            <div class="flex-fill" [routerLink]="tab.route.path">
+              {{ tab.name }}
+            </div>
+            <div
+              class="transition-all-ease-250ms"
+              [style.width]="currentHoverTabKey == tab.key ? 'auto' : '0px'"
+              [class.pl-3]="currentHoverTabKey == tab.key"
+              [class.opacity-0]="currentHoverTabKey != tab.key"
+              [class.invisible]="currentHoverTabKey != tab.key"
+              *ngIf="tabs.length > 1"
+              (click)="disposeTab(tab)"
+            >
+              X
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Content of one tab (and all other non visible) -->
+    <div class="tab-content p-3 border-left border-right flex-fill">
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
       <ng-container *ngFor="let tab of tabs">
         <div
           class="tab-pane fade {{ tab.name }}"

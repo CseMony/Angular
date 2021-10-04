@@ -17,6 +17,7 @@ import { IconsModule } from '@progress/kendo-angular-icons';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { TestServiceService } from './test-service.service';
 import { AccordionComponent } from './UI/accordion/accordion.component';
+<<<<<<< HEAD
 import { HomeComponent } from './home/home.component';
 import { ChartMorrisComponent } from './charts/chart-morris/chart-morris.component';
 import { ChartRickshawComponent } from './charts/chart-rickshaw/chart-rickshaw.component';
@@ -24,6 +25,13 @@ import { ChartRickshawComponent } from './charts/chart-rickshaw/chart-rickshaw.c
 
 const ROUTES: Route[] = [
   {path:'',redirectTo:'index.html',pathMatch:'full'},
+=======
+
+
+
+const ROUTES: Route[] = [
+  {path:'',component:HomeComponent},
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
   { path: 'formLayout', component: FormLayoutComponent},
   { path: 'formElements', component: FormElementsComponent},
   { path: 'formValidation', component: FormValidationComponent},
@@ -43,9 +51,13 @@ const ROUTES: Route[] = [
     FormLayoutComponent,
     FormElementsComponent,
     FormValidationComponent,
+<<<<<<< HEAD
     AccordionComponent,
     ChartMorrisComponent,
     ChartRickshawComponent
+=======
+    AccordionComponent
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
 
   
    

@@ -21,7 +21,10 @@ import {
 import { ITab } from './tab';
 import { BehaviorSubject } from 'rxjs';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+<<<<<<< HEAD
 import { HomeComponent } from './home/home.component';
+=======
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
 
 //import studentsData from './Data.json';
 
@@ -169,7 +172,16 @@ export class AppComponent implements OnInit {
               "route":"formValidation"
              
             },
+<<<<<<< HEAD
            
+=======
+            {
+              "Parentid":2,
+              "id":2,
+              "name":"Form Wizard",
+              "route":"formwizards"
+            }
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
             
           ],
           
@@ -190,6 +202,17 @@ export class AppComponent implements OnInit {
           "name":"Accordion",
           "route" :"Accordion"
         }
+<<<<<<< HEAD
+=======
+      
+          
+           
+            
+          ]
+        
+    
+      
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
       
        ]
 
