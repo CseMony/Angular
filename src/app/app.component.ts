@@ -73,14 +73,7 @@ export class AppComponent implements OnInit {
  
   ngOnInit() {
     this.routes = this.router.config;
-    this.tabs.push({
-      name: "Home",
-      component: HomeComponent,
-      key: "Home",
-      active: true,
-      route:   {path:'Home',component:HomeComponent},
-      count: new BehaviorSubject<number>(0)
-    });
+   
     
   }
   disposeTab(tab: ITab) {
