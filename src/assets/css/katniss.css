@@ -3030,9 +3030,11 @@ tbody.collapse.show {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  color: #868e96;
 }
 .nav-link:focus, .nav-link:hover {
   text-decoration: none;
+  color: #868e96;
 }
 .nav-link.disabled {
   color: #868e96;

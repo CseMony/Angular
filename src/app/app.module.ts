@@ -17,28 +17,28 @@ import { IconsModule } from '@progress/kendo-angular-icons';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { TestServiceService } from './test-service.service';
 import { AccordionComponent } from './UI/accordion/accordion.component';
-<<<<<<< HEAD
 import { HomeComponent } from './home/home.component';
-import { ChartMorrisComponent } from './charts/chart-morris/chart-morris.component';
-import { ChartRickshawComponent } from './charts/chart-rickshaw/chart-rickshaw.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { MorrisJsModule } from 'angular-morris-js';
+import { ChartsMorrisComponent } from './charts-morris/charts-morris.component';
+import { ChartsRickshawComponent } from './charts-rickshaw/charts-rickshaw.component';
+import { ButtonsComponent } from './buttons/buttons.component';
+import { BasicTableComponent } from './basic-table/basic-table.component';
 
 
 const ROUTES: Route[] = [
-  {path:'',redirectTo:'index.html',pathMatch:'full'},
-=======
-
-
-
-const ROUTES: Route[] = [
-  {path:'',component:HomeComponent},
->>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
-  { path: 'formLayout', component: FormLayoutComponent},
-  { path: 'formElements', component: FormElementsComponent},
-  { path: 'formValidation', component: FormValidationComponent},
-  { path: 'formwizards', component: FormWizardComponent},
+  {path:'Home',component:HomeComponent,pathMatch:"full"},
+  { path: 'Form Layout', component: FormLayoutComponent},
+  { path: 'Form Elements', component: FormElementsComponent},
+  { path: 'Form Validation', component: FormValidationComponent},
+  { path: 'Form wizards', component: FormWizardComponent},
   { path:'Accordion' ,component:AccordionComponent},
-  {path:'chartMorris' ,component:ChartMorrisComponent},
-  {path:'chartRickshaw' ,component:ChartRickshawComponent},
+  {path:'Chart Morris' ,component:ChartsMorrisComponent},
+  {path:'Chart Rickshaw' ,component:ChartsRickshawComponent},
+  {path:'Button' ,component:ButtonsComponent},
+  {path:"Basic Tables", component:BasicTableComponent}
+
 
 ];
 
@@ -51,15 +51,12 @@ const ROUTES: Route[] = [
     FormLayoutComponent,
     FormElementsComponent,
     FormValidationComponent,
-<<<<<<< HEAD
     AccordionComponent,
-    ChartMorrisComponent,
-    ChartRickshawComponent
-=======
-    AccordionComponent
->>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
-
-  
+    ChartsRickshawComponent,
+    ChartsMorrisComponent,
+    ButtonsComponent,
+    BasicTableComponent
+ 
    
   ],
  
@@ -72,6 +69,9 @@ const ROUTES: Route[] = [
     LayoutModule,
     IconsModule,
     ButtonsModule,
+    MorrisJsModule,
+    MatSidenavModule,
+    MatListModule,
     RouterModule.forRoot(ROUTES, { relativeLinkResolution: 'legacy' })
   ],
   providers: [TestServiceService],

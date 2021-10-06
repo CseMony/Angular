@@ -21,10 +21,7 @@ import {
 import { ITab } from './tab';
 import { BehaviorSubject } from 'rxjs';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-<<<<<<< HEAD
 import { HomeComponent } from './home/home.component';
-=======
->>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
 
 //import studentsData from './Data.json';
 
@@ -76,6 +73,15 @@ export class AppComponent implements OnInit {
  
   ngOnInit() {
     this.routes = this.router.config;
+    this.tabs.push({
+      name: "Home",
+      component: HomeComponent,
+      key: "Home",
+      active: true,
+      route:   {path:'Home',component:HomeComponent},
+      count: new BehaviorSubject<number>(0)
+    });
+    
   }
   disposeTab(tab: ITab) {
     if (this.tabs.length > 1) {
@@ -98,21 +104,21 @@ export class AppComponent implements OnInit {
     // get the component to activate by the route
     const comp = val.state.root.firstChild!.component;
     console.log(comp);
-
-     const name =val.state.url.split('/');
-    console.log(name[1]);
-    console.log(val.state.root.firstChild!.routeConfig!);
+  
+    console.log(val.state.root.firstChild!.routeConfig!.path!);
+    let urlName = val.state.root.firstChild!.routeConfig!.path!;
     // deactivate all tabs
     this.deactivateTabs();
-    if( typeof(name[1]) === 'string' ) { console.log("true"); }
+ 
+
     // check if the tab to be activated is already existing
-    if (this.tabs.find(tab => tab.name ==name[1] ) == null) {
+    if (this.tabs.find(tab => tab.name ==urlName ) == null) {
 
       // if not, push it into the tab array
       this.tabs.push({
-        name: name[1],
+        name: urlName,
         component: comp,
-        key: name[1],
+        key: urlName,
         active: true,
         route:  val.state.root.firstChild!.routeConfig!,
         count: new BehaviorSubject<number>(0)
@@ -120,7 +126,7 @@ export class AppComponent implements OnInit {
      console.log(this.tabs);
     } else {
       // if the tab exists, activate it
-      const tabToActivate = this.tabs.find(tab => tab.name == name[1]);
+      const tabToActivate = this.tabs.find(tab => tab.name == urlName);
       if (tabToActivate) {
         tabToActivate.active = true;
       }
@@ -134,13 +140,13 @@ export class AppComponent implements OnInit {
   }
 
   navItems: NavItem[] = [
-    {  "Parentid":0,
-    "id": 0,  
+    { "Parentid":0, 
+    "id": 4,  
     "name": "Home",  
-    "icon":"ion-ios-analytics-outline",
-    route:""
+    "icon":"ion-ios-navigate-outline",
+    route:"Home"
   },
-    {  
+   {  
       "Parentid": 0,
       "id":1,  
       "name": "Form", 
@@ -156,39 +162,29 @@ export class AppComponent implements OnInit {
               "Parentid":2,
               "id":1,
               "name":"Form Elements",
-              "route":"formElements"
+              "route":"Form Elements"
              
             },
             {
               "Parentid":2,
               "id":2,
               "name":"Form Layout",
-              "route":"formLayout"
+              "route":"Form Layout"
             },
             {
               "Parentid":2,
               "id":1,
               "name":"Form Validation",
-              "route":"formValidation"
+              "route":"Form Validation"
              
             },
-<<<<<<< HEAD
            
-=======
-            {
-              "Parentid":2,
-              "id":2,
-              "name":"Form Wizard",
-              "route":"formwizards"
-            }
->>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
             
           ],
           
         }
-       ]
-      
-      }
+       ]    
+    }
   
   ,  
     {  "Parentid":0,
@@ -201,18 +197,13 @@ export class AppComponent implements OnInit {
           "id":1,
           "name":"Accordion",
           "route" :"Accordion"
+        },
+        {
+          "Parentid":2,
+          "id":1,
+          "name":"Button",
+          "route" :"Button"
         }
-<<<<<<< HEAD
-=======
-      
-          
-           
-            
-          ]
-        
-    
-      
->>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
       
        ]
 
@@ -226,13 +217,13 @@ export class AppComponent implements OnInit {
           "Parentid":3,
           "id":1,
           "name":"Chart Morris",
-          "route" :"chartMorris"
+          "route" :"Chart Morris"
         },
         {
           "Parentid":3,
           "id":2,
-          "name":"Rickshaw",
-          "route" :"chartRickshaw"
+          "name":"Chart Rickshaw",
+          "route" :"Chart Rickshaw"
         }
       
        ]
@@ -245,7 +236,15 @@ export class AppComponent implements OnInit {
     {  "Parentid":0,
       "id": 5,  
       "name": "Tables",  
-      "icon":"ion-ios-list-outline"
+      "icon":"ion-ios-list-outline",
+      "children":[
+        {
+          "Parentid":5,
+          "id":1,
+          "name":"Basic Table",
+          "route" :"Basic Tables"
+        }
+      ]
     }  
       
   ];
