@@ -1,106 +1,52 @@
+<<<<<<< HEAD
+ <!-- ##### MAIN PANEL ##### -->
+ <div class="kt-mainpanel">
+
+=======
    <!-- ##### MAIN PANEL ##### -->
    <div class="kt-mainpanel">
-    <div class="kt-pagetitle">
-      <h5>Form Validation</h5>
-    </div><!-- kt-pagetitle -->
-
+  
     <div class="kt-pagebody">
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
 
-      <div class="card pd-20 pd-sm-40">
-        <h6 class="card-body-title">Required Input Validation</h6>
-        <p class="mg-b-20 mg-sm-b-30">This is a demo of a required field that must not leave empty.</p>
+  <div class="kt-pagebody">
 
-        <form action="form-validation.html" data-parsley-validate>
-          <div class="wd-300">
-            <div class="d-md-flex mg-b-30">
-              <div class="form-group mg-b-0">
-                <label>Firstname: <span class="tx-danger">*</span></label>
-                <input type="text" name="firstname" class="form-control wd-200 wd-sm-250" placeholder="Enter firstname" required>
-              </div><!-- form-group -->
-              <div class="form-group mg-b-0 mg-md-l-20 mg-t-20 mg-md-t-0">
-                <label>Lastname: <span class="tx-danger">*</span></label>
-                <input type="text" name="lastname" class="form-control wd-200 wd-sm-250" placeholder="Enter lastname" required>
-              </div><!-- form-group -->
-            </div><!-- d-flex -->
-            <button type="submit" class="btn btn-default">Validate Form</button>
-          </div>
-        </form>
-      </div><!-- card -->
+    <div class="card pd-20 pd-sm-40">
+      <h6 class="card-body-title">Medium Editor Plugin</h6>
+      <p class="mg-b-20 mg-sm-b-30">Below is an example of a basic inline editing using medium-editor.</p>
 
-      <p class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">Source Code</p>
-      <pre><code class="html pd-20">&lt;form method=&quot;post&quot; action=&quot;form-validation.html&quot; data-parsley-validate&gt;
-&lt;div class=&quot;wd-300&quot;&gt;
-&lt;div class=&quot;d-flex mg-b-30&quot;&gt;
-  &lt;div class=&quot;form-group mg-b-0&quot;&gt;
-    &lt;label&gt;Firstname: &lt;span class=&quot;tx-danger&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-    &lt;input type=&quot;text&quot; name=&quot;firstname&quot; class=&quot;form-control wd-250&quot; placeholder=&quot;Enter firstname&quot; required&gt;
-  &lt;/div&gt;&lt;!-- form-group --&gt;
-  &lt;div class=&quot;form-group mg-b-0 mg-l-20&quot;&gt;
-    &lt;label&gt;Lastname: &lt;span class=&quot;tx-danger&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-    &lt;input type=&quot;text&quot; name=&quot;lastname&quot; class=&quot;form-control wd-250&quot; placeholder=&quot;Enter lastname&quot; required&gt;
-  &lt;/div&gt;&lt;!-- form-group --&gt;
-&lt;/div&gt;&lt;!-- d-flex --&gt;
-&lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Validate Form&lt;/button&gt;
-&lt;/div&gt;
-&lt;/form&gt;</code></pre>
+      <p>Try highlighting some of the text below.</p>
+      <div class="editable tx-16 bd pd-30 tx-inverse">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</div>
+    </div><!-- card -->
 
-      <div class="card pd-20 pd-sm-40 mg-t-50">
-        <h6 class="card-body-title">Email Validation</h6>
-        <p class="mg-b-20 mg-sm-b-30">A demo of an email field that is required and must also be a valid email address.<br>It automatically validate an email when the field is in type="email".</p>
+    <p class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">HTML Code</p>
+    <pre><code class="html pd-20">&lt;div class="editable"&gt;One morning, when...&lt;/div&gt;</code></pre>
 
-        <form action="form-validation.html" data-parsley-validate>
-          <div class="d-sm-flex wd-sm-300">
-            <div class="form-group mg-b-0">
-              <label>Email: <span class="tx-danger">*</span></label>
-              <input type="email" name="email" class="form-control wd-200 wd-xs-250" placeholder="Enter email" required>
-            </div><!-- form-group -->
-            <div class="mg-sm-l-10 mg-t-10 mg-sm-t-25 pd-t-4">
-              <button type="submit" class="btn btn-default pd-x-15">Validate Email</button>
-            </div>
-          </div>
-        </form>
-      </div><!-- card -->
+    <p class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">Javascript Code</p>
+    <pre><code class="javascript pd-20">var editor = new MediumEditor('.editable');</code></pre>
 
-      <p class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">Source Code</p>
-      <pre><code class="html pd-20">&lt;form action=&quot;form-validation.html&quot; data-parsley-validate&gt;
-&lt;div class=&quot;d-flex wd-300&quot;&gt;
-&lt;div class=&quot;form-group mg-b-0&quot;&gt;
-  &lt;label&gt;Email: &lt;span class=&quot;tx-danger&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-  &lt;input type=&quot;email&quot; name=&quot;email&quot; class=&quot;form-control wd-250&quot; placeholder=&quot;Enter email&quot; required&gt;
-&lt;/div&gt;&lt;!-- form-group --&gt;
-&lt;div class=&quot;mg-l-10 mg-t-25 pd-t-4&quot;&gt;
-  &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Validate Email&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/form&gt;</code></pre>
+    <div class="card pd-20 pd-sm-40 mg-t-50">
+      <h6 class="card-body-title">Summernote Editor</h6>
+      <p class="mg-b-20 mg-sm-b-30">A super simple WYSIWYG editor on Bootstrap.</p>
+      <div id="summernote">Hello, universe!</div>
+    </div><!-- card -->
 
-      <div class="card pd-20 pd-sm-40 mg-t-50">
-        <h6 class="card-body-title">Checkbox/Radio Validation</h6>
-        <p class="mg-b-20 mg-sm-b-30">A demo of checkboxes that must be selected at least two fom any given list.</p>
+    <p class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">HTML Code</p>
+    <pre><code class="html pd-20">&lt;div id="summernote"&gt;Hello, universe!&lt;/div&gt;</code></pre>
 
-        <form action="form-validation.html" data-parsley-validate>
-          <p class="mg-b-10">What is your favorite browser? <span class="tx-danger">*</span></p>
-          <div id="cbWrapper" class="parsley-checkbox">
-            <label class="ckbox">
-              <input type="checkbox" name="browser[]" value="1" data-parsley-mincheck="2" data-parsley-class-handler="#cbWrapper" data-parsley-errors-container="#cbErrorContainer" required><span>Firefox</span>
-            </label>
-            <label class="ckbox">
-              <input type="checkbox" name="browser[]" value="2"><span>Chrome</span>
-            </label>
-            <label class="ckbox">
-              <input type="checkbox" name="browser[]" value="3"><span>Safari</span>
-            </label>
-            <label class="ckbox">
-              <input type="checkbox" name="browser[]" value="4"><span>Edge</span>
-            </label>
-          </div><!-- form-group -->
-          <div id="cbErrorContainer"></div>
-          <div class="mg-t-20">
-            <button type="submit" class="btn btn-default pd-x-15" value="5">Validate Form</button>
-          </div>
-        </form>
-      </div><!-- card -->
+    <p class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">Javascript Code</p>
+    <pre class="mg-b-0"><code class="javascript pd-20">$('#summernote').summernote(&#123;
+height: 150
+&#125;)</code></pre>
 
+<<<<<<< HEAD
+  </div><!-- kt-pagebody -->
+  <div class="kt-footer">
+    <span>Copyright &copy;. All Rights Reserved. Katniss Responsive Bootstrap 4 Admin Dashboard.</span>
+    <span>Created by: ThemePixels, Inc.</span>
+  </div><!-- kt-footer -->
+</div><!-- kt-mainpanel -->
+=======
       <p class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">Source Code</p>
       <pre><code class="html pd-20">&lt;form method=&quot;post&quot; action=&quot;form-validation.html&quot; data-parsley-validate&gt;
 &lt;p class=&quot;mg-b-10&quot;&gt;What is your favorite browser? &lt;span class=&quot;tx-danger&quot;&gt;*&lt;/span&gt;&lt;/p&gt;
@@ -177,9 +123,4 @@
       <span>Created by: ThemePixels, Inc.</span>
     </div><!-- kt-footer -->
   </div><!-- kt-mainpanel -->
-  <div class="kt-breadcrumb">
-    <nav class="breadcrumb">
-      
-      <span class="breadcrumb-item active">Form validation</span>
-    </nav>
-  </div><!-- kt-breadcrumb -->
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f

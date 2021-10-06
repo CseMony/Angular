@@ -28,7 +28,7 @@
     "strictTemplates": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports":true,
-    "strictPropertyInitialization": false,
+    "strictPropertyInitialization": true,
     "suppressImplicitAnyIndexErrors": true,
   }
 }

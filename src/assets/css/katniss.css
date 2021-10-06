@@ -3052,15 +3052,19 @@ tbody.collapse.show {
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
   border-color: #e9ecef #e9ecef #ddd;
 }
-.nav-tabs .nav-link.disabled {
-  color: #868e96;
-  background-color: transparent;
+.nav-tabs .nav-link{
+  color: #dbe0e6;
+  background-color: #1b1b1b;
   border-color: transparent;
 }
-.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active{
+  color: #000;
+  background-color: #e6eaeb;
+}
+
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
-  background-color: #f8f9fa;
+  color: #d3d7db;
+  background-color: #1b1b1b;
   border-color: #ddd #ddd #f8f9fa;
 }
 .nav-tabs .dropdown-menu {
@@ -3074,7 +3078,7 @@ tbody.collapse.show {
 }
 .nav-pills .nav-link.active, .show > .nav-pills .nav-link {
   color: #fff;
-  background-color: #007bff;
+  background-color: #dce0e4;
 }
 
 .nav-fill .nav-item {
@@ -6058,7 +6062,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 .mt-3 {
-  margin-top: 1rem !important;
+  margin-top: 0rem !important;
 }
 
 .mr-3 {
@@ -12390,8 +12394,8 @@ textarea.parsley-success:focus {
   }
 }
 .kt-breadcrumb .breadcrumb {
-  padding: 0 15px;
-  margin: 0;
+  padding: 0 0 0 0px;
+  margin: 0 0;
   background-color: transparent;
   border-radius: 0;
   font-size: 12px;
@@ -45629,7 +45633,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 }
 
 .tx-spacing-7 {
-  letter-spacign: 3.5px;
+  letter-spacing: 3.5px;
 }
 
 .tx-spacing-8 {

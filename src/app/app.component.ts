@@ -1,4 +1,4 @@
-import { Component, VERSION, ViewChild } from '@angular/core';
+import { Component, OnInit, VERSION, ViewChild } from '@angular/core';
 import { NavigationEnd } from '@angular/router';
 import { MultilevelMenuService, ExpandCollapseStatusEnum, MultilevelNodes, Configuration } from 'ng-material-multilevel-menu';
 import {SlideInOut, ExpandedRTL, ExpandedLTR } from 'ng-material-multilevel-menu';
@@ -21,6 +21,11 @@ import {
 import { ITab } from './tab';
 import { BehaviorSubject } from 'rxjs';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+<<<<<<< HEAD
+import { HomeComponent } from './home/home.component';
+=======
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
+
 //import studentsData from './Data.json';
 
 @Injectable()
@@ -43,14 +48,16 @@ export class CurrentTabInjector {
     ExpandedRTL,
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   //[x: string]: any;
   public tabs: ITab[] = [];
   public routes: Route[] = [];
   public currentHoverTabKey!: string;
   public currentDraggedTab!: ITab;
+  title: any;
+  
 
-
+ 
 
   constructor( private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -70,7 +77,6 @@ export class AppComponent {
   ngOnInit() {
     this.routes = this.router.config;
   }
-
   disposeTab(tab: ITab) {
     if (this.tabs.length > 1) {
       this.tabs = this.tabs.filter(item => item.key !== tab.key);
@@ -93,28 +99,28 @@ export class AppComponent {
     const comp = val.state.root.firstChild!.component;
     console.log(comp);
 
-     const name =val.state.root.firstChild!.outlet;
-    console.log(name);
-    
+     const name =val.state.url.split('/');
+    console.log(name[1]);
+    console.log(val.state.root.firstChild!.routeConfig!);
     // deactivate all tabs
     this.deactivateTabs();
-
+    if( typeof(name[1]) === 'string' ) { console.log("true"); }
     // check if the tab to be activated is already existing
-    if (this.tabs.find(tab => tab.name ==name ) == null) {
+    if (this.tabs.find(tab => tab.name ==name[1] ) == null) {
 
       // if not, push it into the tab array
       this.tabs.push({
-        name: name,
+        name: name[1],
         component: comp,
-        key: name,
+        key: name[1],
         active: true,
-        route: this.tabs[this.tabs.length - 1].route,
+        route:  val.state.root.firstChild!.routeConfig!,
         count: new BehaviorSubject<number>(0)
       });
-
+     console.log(this.tabs);
     } else {
       // if the tab exists, activate it
-      const tabToActivate = this.tabs.find(tab => tab.name == comp);
+      const tabToActivate = this.tabs.find(tab => tab.name == name[1]);
       if (tabToActivate) {
         tabToActivate.active = true;
       }
@@ -128,17 +134,23 @@ export class AppComponent {
   }
 
   navItems: NavItem[] = [
+    {  "Parentid":0,
+    "id": 0,  
+    "name": "Home",  
+    "icon":"ion-ios-analytics-outline",
+    route:""
+  },
     {  
       "Parentid": 0,
       "id":1,  
       "name": "Form", 
-      "icon":"ion-ios-gear-outline", 
+      "icon":"icon ion-ios-gear-outline", 
        children: [
         {
           "Parentid":1,
           "id": 2,
           "name": 'Form Details',
-          "route":"/formElements",
+         
           children:[
             {
               "Parentid":2,
@@ -152,7 +164,24 @@ export class AppComponent {
               "id":2,
               "name":"Form Layout",
               "route":"formLayout"
+            },
+            {
+              "Parentid":2,
+              "id":1,
+              "name":"Form Validation",
+              "route":"formValidation"
+             
+            },
+<<<<<<< HEAD
+           
+=======
+            {
+              "Parentid":2,
+              "id":2,
+              "name":"Form Wizard",
+              "route":"formwizards"
             }
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
             
           ],
           
@@ -165,38 +194,48 @@ export class AppComponent {
     {  "Parentid":0,
       "id": 2,  
       "name": "UI Elements",  
-      "icon":"ion-ios-filing-outline",
+      "icon":"icon ion-ios-filing-outline",
       "children":[
         {
           "Parentid":2,
           "id":1,
-          "name":"UI Elements",
+          "name":"Accordion",
+          "route" :"Accordion"
+        }
+<<<<<<< HEAD
+=======
+      
           
-          "children":[
-            {
-              "Parentid":2,
-              "id":1,
-              "name":"Form Elements",
-              "route":"formElements"
-             
-            },
-            {
-              "Parentid":2,
-              "id":2,
-              "name":"Form Layout",
-              "route":"formLayout"
-            }
+           
             
           ]
-        }
+        
     
-      ]
       
+>>>>>>> 2f61bbedcd99e7e6e3de26b13e818bec21a8703f
+      
+       ]
+
     },  
     {  "Parentid":0,
       "id": 3,  
       "name": "Charts",  
-      "icon":"ion-ios-analytics-outline"
+      "icon":"ion-ios-analytics-outline",
+       "children":[
+        {
+          "Parentid":3,
+          "id":1,
+          "name":"Chart Morris",
+          "route" :"chartMorris"
+        },
+        {
+          "Parentid":3,
+          "id":2,
+          "name":"Rickshaw",
+          "route" :"chartRickshaw"
+        }
+      
+       ]
     },  
     { "Parentid":0, 
       "id": 4,  
@@ -210,6 +249,8 @@ export class AppComponent {
     }  
       
   ];
+  
+ 
 
   public closedTabs:boolean[] = [];
   public selected = true;
@@ -234,4 +275,5 @@ export class AppComponent {
  
   
 }
+
 
