@@ -1,9 +1,8 @@
 import { Component, OnInit, VERSION, ViewChild } from '@angular/core';
-import { NavigationEnd } from '@angular/router';
-import { MultilevelMenuService, ExpandCollapseStatusEnum, MultilevelNodes, Configuration } from 'ng-material-multilevel-menu';
+
 import {SlideInOut, ExpandedRTL, ExpandedLTR } from 'ng-material-multilevel-menu';
 import { NavItem } from './nav-item';
-import { ButtonsModule } from "@progress/kendo-angular-buttons";
+
 import { TabStripComponent } from "@progress/kendo-angular-layout";
 import {
   
@@ -19,9 +18,10 @@ import {
   Route
 } from "@angular/router";
 import { ITab } from './tab';
-import { BehaviorSubject } from 'rxjs';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { HomeComponent } from './home/home.component';
+import { BehaviorSubject, from } from 'rxjs';
+import { data,listToTree} from './list-data';
+
+
 
 //import studentsData from './Data.json';
 
@@ -32,6 +32,8 @@ export class CurrentTabInjector {
     this.currentTab = [];
   }
 }
+
+declare var list_to_tree :any;
 
 @Component({
   selector: 'app-root',
@@ -72,8 +74,9 @@ export class AppComponent implements OnInit {
   }
  
   ngOnInit() {
+
     this.routes = this.router.config;
-   
+    
     
   }
   disposeTab(tab: ITab) {
@@ -242,7 +245,7 @@ export class AppComponent implements OnInit {
       
   ];
   
- 
+  dataItem=listToTree(data);
 
   public closedTabs:boolean[] = [];
   public selected = true;

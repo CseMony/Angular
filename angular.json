@@ -60,7 +60,8 @@
               "src/assets/lib/chart.js/Chart.js",
               "src/assets/js/katniss.js",
               "src/assets/js/ResizeSensor.js",
-              "src/assets/js/dashboard.js"
+              "src/assets/js/dashboard.js",
+              "src/assets/js/list.js"
             ]
           },
           "configurations": {
