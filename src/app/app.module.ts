@@ -68,7 +68,7 @@ const ROUTES: Route[] = [
     LayoutModule,
     IconsModule,
     ButtonsModule,
-    MorrisJsModule,
+   
     MatSidenavModule,
     MatListModule,
     RouterModule.forRoot(ROUTES, { relativeLinkResolution: 'legacy' })
