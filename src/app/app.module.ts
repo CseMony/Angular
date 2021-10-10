@@ -36,7 +36,7 @@ const ROUTES: Route[] = [
   {path:'Chart Morris' ,component:ChartsMorrisComponent},
   {path:'Chart Rickshaw' ,component:ChartsRickshawComponent},
   {path:'Button' ,component:ButtonsComponent},
-  {path:"Basic Tables", component:BasicTableComponent}
+  {path:"Basic Table", component:BasicTableComponent}
 
 
 ];
@@ -68,7 +68,7 @@ const ROUTES: Route[] = [
     LayoutModule,
     IconsModule,
     ButtonsModule,
-   
+    
     MatSidenavModule,
     MatListModule,
     RouterModule.forRoot(ROUTES, { relativeLinkResolution: 'legacy' })
