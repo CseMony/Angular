@@ -20,7 +20,6 @@ import { AccordionComponent } from './UI/accordion/accordion.component';
 import { HomeComponent } from './home/home.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { MorrisJsModule } from 'angular-morris-js';
 import { ChartsMorrisComponent } from './charts-morris/charts-morris.component';
 import { ChartsRickshawComponent } from './charts-rickshaw/charts-rickshaw.component';
 import { ButtonsComponent } from './buttons/buttons.component';
