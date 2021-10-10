@@ -178,10 +178,10 @@
             <i class="{{item.icon}}"></i>
             <span>{{item.name}}</span>
           </a>
-          <ul class="nav kt-sideleft-menu" style="display:none" *ngIf="item.childMenus.length>0">
-            <div> 
-              <li class="nav-item"  style="margin-left:30px" *ngFor="let child of item.childMenus" ><a [routerLink] ="child.route" class="nav-link with-sub"> <span>{{child.name}}</span>
-            </a>
+         
+          <ul class="nav kt-sideleft-menu" style="display:none" *ngFor="let child of item.childMenus">
+            
+              <li class="nav-item"  style="margin-left:30px"  ><a [routerLink] ="child.route" class="nav-link with-sub"> <span>{{child.name}}</span></a>
            
               <ul class="nav-sub" >
                 <li class="nav-item" ><a [routerLink]="children.route"  routerLinkActive="active"
@@ -189,7 +189,7 @@
                
               </ul>
             </li>
-          </div>
+         
           </ul>
         
         </ng-template>
