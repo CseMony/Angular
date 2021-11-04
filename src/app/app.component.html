@@ -122,15 +122,11 @@
               </div>
               <div
                 class="transition-all-ease-250ms"
-                [style.width]="currentHoverTabKey == tab.key ? 'auto' : '1px'"
-                [class.pl-3]="currentHoverTabKey == tab.key"
-                [class.opacity-0]="currentHoverTabKey != tab.key"
-                [class.invisible]="currentHoverTabKey != tab.key"
                 *ngIf="tabs.length > 1"
                 (click)="disposeTab(tab)"
-                
+                style="padding-left: 10px;"
               >
-                X
+                x
               </div>
             </div>
           </div>
