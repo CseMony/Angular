@@ -24,9 +24,11 @@
 
    // hiding all sub nav in left sidebar by default.
    $('.nav-sub').slideUp();
-
+   $('.nav-sub-sub ').slideUp();  
    // showing sub navigation to nav with sub nav.
    $('.with-sub.active + .nav-sub').slideDown();
+
+   $('.with-sub.active + .nav').slideDown();
 
    // showing sub menu while hiding others
    $('.with-sub').on('click', function(e) {
@@ -34,7 +36,8 @@
 
      var nextElem = $(this).next();
      if(!nextElem.is(':visible')) {
-       $('.nav-sub').slideUp();
+      $('.nav-link with-sub').slideUp();
+       
      }
      nextElem.slideToggle();
    });
